@@ -1,6 +1,13 @@
 local options = {
   formatters_by_ft = {
-    python = { "black" },
+    -- python = function(bufnr)
+    --   if require("conform").get_formatter_info("ruff_format", bufnr).available then
+    --     return { "ruff_format" }
+    --   else
+    --     return { "isort", "black" }
+    --   end
+    -- end,
+    python = { "isort", "black" },
     lua = { "stylua" },
     css = { "prettier" },
     html = { "prettier" },
