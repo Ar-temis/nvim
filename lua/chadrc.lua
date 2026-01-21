@@ -8,6 +8,7 @@ local M = {}
 M.base46 = {
   theme = "wombat",
 
+  transparency = true,
   hl_override = {
     Comment = { italic = true },
     ["@comment"] = { italic = true },
@@ -28,6 +29,7 @@ M.ui = {
     order = nil,
     modules = nil,
   },
+  telescope = { style = "bordered" }, -- borderless / bordered
 }
 
 return M
