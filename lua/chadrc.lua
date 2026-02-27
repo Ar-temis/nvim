@@ -6,30 +6,30 @@
 local M = {}
 
 M.base46 = {
-  theme = "wombat",
+	theme = "wombat",
 
-  transparency = true,
-  hl_override = {
-    Comment = { italic = true },
-    ["@comment"] = { italic = true },
-  },
+	transparency = false,
+	hl_override = {
+		Comment = { italic = true },
+		["@comment"] = { italic = true },
+	},
 }
 
 M.nvdash = { load_on_startup = true }
 M.ui = {
-  tabufline = {
-    lazyload = false,
-  },
-  statusline = {
-    enabled = true,
-    theme = "vscode_colored", -- default/vscode/vscode_colored/minimal
-    -- default/round/block/arrow separators work only for default statusline theme
-    -- round and block will work for minimal theme only
-    separator_style = "default",
-    order = nil,
-    modules = nil,
-  },
-  telescope = { style = "bordered" }, -- borderless / bordered
+	tabufline = {
+		lazyload = false,
+	},
+	statusline = {
+		enabled = true,
+		theme = "vscode_colored", -- default/vscode/vscode_colored/minimal
+		-- default/round/block/arrow separators work only for default statusline theme
+		-- round and block will work for minimal theme only
+		separator_style = "default",
+		order = nil,
+		modules = nil,
+	},
+	telescope = { style = "bordered" }, -- borderless / bordered
 }
 
 return M

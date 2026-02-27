@@ -4,7 +4,9 @@ local servers = {
 	"html",
 	"cssls",
 	"clangd",
+	-- "ruff",
 	"pylsp",
+	"pyright",
 	"postgres_lsp",
 	"jdtls",
 	"ts_ls",
@@ -12,16 +14,14 @@ local servers = {
 	"harper_ls",
 }
 vim.lsp.config("harper_ls", {
+	filetypes = { "quarto" },
 	settings = {
 		["harper-ls"] = {
-			userDictPath = "",
-			workspaceDictPath = "",
-			fileDictPath = "",
 			linters = {
-				SpellCheck = true,
+				SpellCheck = false,
 				SpelledNumbers = false,
 				AnA = true,
-				SentenceCapitalization = true,
+				SentenceCapitalization = false,
 				UnclosedQuotes = true,
 				WrongQuotes = false,
 				LongSentences = true,
@@ -42,6 +42,23 @@ vim.lsp.config("harper_ls", {
 			maxFileLength = 120000,
 			ignoredLintsPath = "",
 			excludePatterns = {},
+		},
+	},
+})
+
+vim.lsp.config("ruff", {
+	init_options = {
+		settings = {
+			line_length = 120,
+		},
+	},
+})
+
+vim.lsp.config("pyright", {
+	settings = {
+		pyright = {
+			disableOrganizeImports = true,
+			disableLanguageServices = true,
 		},
 	},
 })
