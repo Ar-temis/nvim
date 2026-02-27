@@ -5,7 +5,7 @@ local servers = {
 	"cssls",
 	"clangd",
 	-- "ruff",
-	"pylsp",
+	"jedi_language_server",
 	"pyright",
 	"postgres_lsp",
 	"jdtls",
