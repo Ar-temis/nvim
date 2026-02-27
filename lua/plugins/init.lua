@@ -16,30 +16,24 @@ return {
 	{ import = "nvchad.blink.lazyspec" },
 
 	{
-		"saghen/blink.cmp",
-		dependencies = {
-			{
-				"supermaven-inc/supermaven-nvim",
-				opts = {},
-				cmd = "SupermavenUseFree",
-			},
-
-			"huijiro/blink-cmp-supermaven",
-		},
-		opts = {
-			sources = {
-				default = { "lsp", "snippets", "buffer", "path", "supermaven" },
-				providers = {
-					supermaven = {
-						name = "supermaven",
-						module = "blink-cmp-supermaven",
-						async = true,
-					},
-				},
-			},
+		"supermaven-inc/supermaven-nvim",
+		opts = {},
+		cmd = "SupermavenUseFree",
+		event = "InsertEnter",
+		keymaps = {
+			accept_suggestion = nil,
+			clear_suggestion = nil,
+			accept_word = nil,
 		},
 	},
-
+	{
+		"saghen/blink.cmp",
+		opts = function(_, opts)
+			opts.keymap = opts.keymap or {}
+			opts.keymap["<Tab>"] = false -- disable blink tab
+			return opts
+		end,
+	},
 	{
 		"nvim-treesitter/nvim-treesitter",
 		opts = {

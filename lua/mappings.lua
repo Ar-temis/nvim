@@ -3,7 +3,25 @@ require("nvchad.mappings")
 -- add yours here
 
 local map = vim.keymap.set
+map("i", "<Tab>", function()
+	local supermaven_preview = require("supermaven-nvim.completion_preview")
+	local blink = require("blink.cmp")
 
+	-- If Supermaven ghost visible
+	if supermaven_preview.has_suggestion and supermaven_preview.has_suggestion() then
+		supermaven_preview.on_accept_suggestion()
+		return
+	end
+
+	-- If blink menu visible
+	if blink.is_visible() then
+		blink.accept()
+		return
+	end
+
+	-- Otherwise insert literal tab
+	vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Tab>", true, false, true), "n", true)
+end, { desc = "Smart Tab (Supermaven > Blink > Tab)" })
 -- Center screen on scroll
 map("n", "<C-d>", "<C-d>zz", { noremap = true, silent = true })
 map("n", "<C-u>", "<C-u>zz", { noremap = true, silent = true })
