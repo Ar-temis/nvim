@@ -29,6 +29,8 @@ map("n", "<C-u>", "<C-u>zz", { noremap = true, silent = true })
 -- Command mode shortcut
 map("n", ";", ":", { desc = "CMD enter command mode" })
 
+map("x", "<leader>p", '"_dP', { desc = "Paste without overwriting yank register" })
+
 -- Escape shortcut
 map("i", "jk", "<ESC>")
 
