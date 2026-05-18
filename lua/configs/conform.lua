@@ -7,7 +7,7 @@ local options = {
     --     return { "isort", "black" }
     --   end
     -- end,
-    python = { "isort", "black" },
+    -- python = { "isort", "ruff" },
     lua = { "stylua" },
     css = { "prettier" },
     html = { "prettier" },
