@@ -1,8 +1,8 @@
 require("nvchad.mappings")
 
--- add yours here
-
 local map = vim.keymap.set
+--
+-- add yours here
 map("i", "<Tab>", function()
 	local supermaven_preview = require("supermaven-nvim.completion_preview")
 	local blink = require("blink.cmp")
@@ -49,3 +49,7 @@ map("v", "<leader>ca", function()
 end, { desc = "LSP Code Action" })
 
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
+
+map("n", "<A-r>", function()
+	require("custom.run_file").run()
+end, { desc = "Run current file" })

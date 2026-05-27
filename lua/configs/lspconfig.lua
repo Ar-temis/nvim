@@ -18,7 +18,7 @@ vim.lsp.config("harper_ls", {
   settings = {
     ["harper-ls"] = {
       linters = {
-        SpellCheck = true,
+        SpellCheck = false,
         SpelledNumbers = false,
         AnA = true,
         SentenceCapitalization = false,
