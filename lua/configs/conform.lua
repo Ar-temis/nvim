@@ -1,4 +1,12 @@
 local options = {
+	formatters = {
+		spotless = {
+			command = "./mvnw",
+			args = { "spotless:apply", "-DspotlessFiles=" .. "$FILENAME" },
+			stdin = false,
+			cwd = require("conform.util").root_file({ "mvnw", "pom.xml" }),
+		},
+	},
 	formatters_by_ft = {
 		-- python = function(bufnr)
 		--   if require("conform").get_formatter_info("ruff_format", bufnr).available then
@@ -13,6 +21,7 @@ local options = {
 		html = { "prettier" },
 		js = { "biome" },
 		tsx = { "biome" },
+		java = { "spotless" },
 	},
 
 	format_on_save = {
