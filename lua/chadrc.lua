@@ -6,7 +6,7 @@
 local M = {}
 
 M.base46 = {
-	theme = "onedark",
+	theme = "kanagawa",
 
 	transparency = false,
 	hl_override = {
@@ -30,6 +30,13 @@ M.ui = {
 		modules = nil,
 	},
 	telescope = { style = "bordered" }, -- borderless / bordered
+}
+
+M.term = { -- terminal settings
+	sizes = {
+		sp = 0.4,
+		vsp = 0.4,
+	},
 }
 
 return M
